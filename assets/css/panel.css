@@ -1,0 +1,22 @@
+.panel .card .profile-name {
+    color: black;
+}
+
+.panel .card .profile-picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.panel .social ul li {
+    display: inline;
+}
+
+.card {
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 200px;
+    display: inline-block;
+    /* float: left; */
+}
