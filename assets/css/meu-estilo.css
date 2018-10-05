@@ -1,0 +1,25 @@
+.progress {
+    height: 6px;
+}
+
+.tags {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.meu-btn-default {
+    background-color: #33C208;
+    border: 1px solid #33C208;
+    color: #FFF;
+}
+
+.meu-btn-default:hover {
+    border: 1px solid #3b8225;
+    background-color: #3b8225;
+    color: #FFF;
+}
+
+.github-verde {
+    color: #33C208;
+    font-size: 30px;
+}

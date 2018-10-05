@@ -65,15 +65,6 @@ header.search {
     border: 5px solid green;
 }
 
-.search button {
-    height: 50px;
-    width: 100px;
-    color: white;
-    border: 5px solid green;
-    background-color: green;
-    text-transform: uppercase; 
-}
-
 .search img.logo {
     height: 100px;
     width: 300px;
