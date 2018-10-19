@@ -1,0 +1,17 @@
+.aside-menu {
+    float: left;
+    position: absolute;
+    left: 40px;
+    font-size: 30px;
+}
+
+.aside-menu ul li {
+    margin: 20px 0;
+    list-style-type: none;
+}
+
+.aside-menu ul li:hover {
+    font-size: 35px;
+    margin-bottom: -8px;
+    cursor: pointer;
+}
