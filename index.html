@@ -32,14 +32,18 @@
             <header class="search panel">
                 <img class="logo" src="./assets/image/store.png" alt="Resume Store logo">
                 <section>
-                    <form class="navbar-form">
+                    <form>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Pesquisar...">
                             <span class="input-group-btn">
-                                <button class="btn btn-default btn-filter" title="Filtros" type="button">
+                                <button class="btn btn-default btn-filter" title="Filtros" type="button" onclick="filterClicked()">
                                     <span><i class="fas fa-sliders-h"></i></span>
                                 </button>
                             </span>
+                        </div>
+
+                        <div id="advanced-filter" class="advanced-filter hidden">
+                            <h3>Eu sou o componente de filtro avançado!</h3>
                         </div>
                     </form>
                 </section>
@@ -48,11 +52,21 @@
             <aside>
                 <nav class="aside-menu">
                     <ul>
-                        <li title="Novo"><i class="fas fa-user-plus"></i></li>
-                        <li title="Curriculo"><i class="far fa-address-card"></i></li>
-                        <li title="Favoritos"><i class="far fa-star"></i></li>
-                        <li title="Configurações"><i class="fas fa-cogs"></i></li>
-                        <li title="Sair"><i class="fas fa-sign-out-alt"></i></li>
+                        <li title="Novo">
+                            <a href="./pages/profile_form.html"><i class="fas fa-user-plus"></i></a>
+                        </li>
+                        <li title="Curriculo">
+                            <a href=""><i class="far fa-address-card"></i></a>
+                        </li>
+                        <li title="Favoritos">
+                            <a href=""><i class="far fa-star"></i></a>
+                        </li>
+                        <li title="Configurações">
+                            <a href=""><i class="fas fa-cogs"></i></a>
+                        </li>
+                        <li title="Sair">
+                            <a href=""><i class="fas fa-sign-out-alt"></i></a>
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -221,5 +235,14 @@
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            
+            // codigo
+            // console.log("Olá...");
+
+        </script>
+        <script src="./src/js/resumestore.js"></script>
+
     </body>
 </html>

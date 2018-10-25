@@ -26,3 +26,7 @@ header.search {
 .btn-filter {
     height: 34px;
 }
+
+.hidden {
+    display: none;
+}

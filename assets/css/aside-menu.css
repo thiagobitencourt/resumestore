@@ -1,7 +1,7 @@
 .aside-menu {
     float: left;
     position: absolute;
-    left: 40px;
+    left: 0px;
     font-size: 30px;
 }
 
@@ -14,4 +14,8 @@
     font-size: 35px;
     margin-bottom: -8px;
     cursor: pointer;
+}
+
+.aside-menu ul li a {
+    color: #333 !important;
 }
