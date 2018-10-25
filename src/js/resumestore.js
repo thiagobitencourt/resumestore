@@ -30,13 +30,10 @@ function filterClicked() {
     advancedFilter.className = novasClasses;
 }
 
-var inputSearch = document.querySelector("form input[type='text']");
-console.log(inputSearch);
-
-inputSearch.onchange = function(event) {
-    alert(event.target.value);
-    console.log("O texto da busca mudou!");
-}
+// inputSearch.onchange = function(event) {
+//     alert(event.target.value);
+//     console.log("O texto da busca mudou!");
+// }
 
 // var logo = document.getElementsByClassName("logo");
 // console.log(logo);
