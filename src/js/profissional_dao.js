@@ -1,6 +1,6 @@
 
 var senhaDoBanco = 'resumestore.profissionais';
-var listaDeProfissionais = JSON.parse(localStorage.getItem(senhaDoBanco));
+var listaDeProfissionais = JSON.parse(localStorage.getItem(senhaDoBanco)) || [];
 
 console.log(listaDeProfissionais);
 
