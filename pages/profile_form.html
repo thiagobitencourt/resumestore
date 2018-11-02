@@ -8,20 +8,45 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="./assets/css/resumestore.css">
-    <link rel="stylesheet" href="./assets/css/meu-estilo.css">
-    <link rel="stylesheet" href="./assets/css/aside-menu.css">
+    <link rel="stylesheet" href="../assets/css/resumestore.css">
+    <link rel="stylesheet" href="../assets/css/meu-estilo.css">
+    <link rel="stylesheet" href="../assets/css/aside-menu.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
-<body>
+<body style="margin: 0 10%">
+
+    <header>
+        <h3>Cadastrar um novo profissional</h3>
+    </header>
 
     <main>
-        <form name="perfil">
-
-            <h2>Página para adição e/ou edição de um perfil</h2>
-
+        <form id="meu-formulario" onsubmit="cadastrarProfissional(event)">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" name="nome" class="form-control" id="name" placeholder="Informe seu nome">
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <input type="text" name="descricao" class="form-control" id="description" placeholder="Informe o seu cargo">
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="file" name="foto" id="foto">
+                <p class="help-block">Faça upload de uma imagem para o seu perfil.</p>
+            </div>
+            <div class="form-group">
+                <label for="tags">Habilidades</label>
+                <input type="text" name="habilidades" id="tags" class="form-control">
+                <span id="helpBlock" class="help-block">
+                    Informe as suas habilidades separadas por "ponto e vírgula (;)"
+                </span>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </main>
+
+    <script src="../src/js/profissional_dao.js"></script>
+    <script src="../src/js/formulario.js"></script>
 
 </body>
 </html>

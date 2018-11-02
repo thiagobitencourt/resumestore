@@ -1,24 +1,23 @@
 
+var senhaDoBanco = 'resumestore.profissionais';
+var listaDeProfissionais = JSON.parse(localStorage.getItem(senhaDoBanco));
+
+console.log(listaDeProfissionais);
 
 function getProfissionais(searchTerm) {
-    return [
-        {
-            nome: "Steve Jobs",
-            descricao: "Fundador da Apple",
-            foto: "./assets/image/steve.jpg",
-            habilidades: [ 
-                { nome: "Apple", cor: "primary" }, 
-                { nome: "IOs", cor: "success" },
-            ]
-        },
-        {
-            nome: "Bill Gates",
-            descricao: "Fundador da Microsoft",
-            foto: "./assets/image/gates.jpeg",
-            habilidades: [ 
-                { nome: "Microsoft", cor: "danger" }, 
-                { nome: "Windows", cor: "warning" },
-            ]
-        }
-    ]
+
+    console.log(searchTerm);
+
+    return listaDeProfissionais.filter(function(profissional) {
+        return profissional.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            profissional.descricao.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            profissional.habilidades.some(function(h) {
+                return h.nome.toLowerCase().includes(searchTerm)
+            });
+    });
+}
+
+function addProfissional(profissional) {
+    listaDeProfissionais.push(profissional);
+    localStorage.setItem(senhaDoBanco, JSON.stringify(listaDeProfissionais) );
 }
