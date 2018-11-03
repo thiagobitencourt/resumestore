@@ -52,8 +52,11 @@ document.getElementById('user-input-image').addEventListener('change', function(
         var file = event.target.files[0] || {};
         var reader = new FileReader();
         reader.onload = function(){
-          console.log(reader.result);
+            var img = document.getElementById('user-image');
+            img.src = reader.result;
+            currentResume.foto = reader.result;
         };
-        reader.readAsArrayBuffer(file);
+
+        reader.readAsDataURL(file);
     }
 });
