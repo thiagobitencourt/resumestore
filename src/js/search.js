@@ -1,7 +1,7 @@
+'use strict';
 
-window.onload = function() {
-
-    var inputSearch = document.querySelector("form input[type='text']");
+window.addEventListener('load', function() {
+    var inputSearch = document.querySelector(".search input[type='text']");
     inputSearch.onkeypress = function(event) {
         if(event.keyCode == 13) {
             event.stopPropagation();
@@ -9,32 +9,34 @@ window.onload = function() {
             search(event.target.value);
         }
     }
-}
+});
 
-function search(text) {
+function search(searchText) {
     var searchResult = document.getElementById('search-result');
+    searchResult.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i></div>';
 
-    var profissionais = getProfissionais(text);
-    var profissionaisHtml = '';
-
-    for(var i = 0; i < profissionais.length; i++) {
-        profissionaisHtml += getProfileComponent(profissionais[i]);
+    if(searchText) {
+        var resumes = Resume.get(searchText);
+        var resultHtml = resumes.map(getProfileComponent).join('');
+        showAfter(resultHtml);
+    } else {
+        showAfter('');
     }
-    searchResult.innerHTML = profissionaisHtml;
+
+    function showAfter(elements) {
+        setTimeout(function() {
+            searchResult.innerHTML = elements;
+        }, 500);
+    }
 }
 
 function getProfileComponent(profissional) {
-    // {
-    //     nome: "",
-    //     descricao: "",
-    //     foto: "",
-    //     habilidades: [ "", ""]
-    // }
+    var defaultUser = '../assets/image/defaultuser.png';
 
     return `
     <div class="col-sm-6 col-md-3 col-xs-12">
         <div class="thumbnail">
-            <img src="${profissional.foto}" alt="${profissional.nome}">
+            <img src="${profissional.foto || defaultUser}" alt="${profissional.nome}">
             <div class="caption">
                 <h3>${profissional.nome}</h3>
                 <p>${profissional.descricao}</p>
@@ -54,30 +56,18 @@ function getProfileComponent(profissional) {
                 <div class="tags">
                     ${getHabilidadesComponent(profissional.habilidades)}
                 </div>
-
-                <p>
-                    <a href="#" class="btn btn-default" role="button">
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </a>
-                    <a href="#" class="btn btn-default meu-btn-default" role="button">
-                        <span class="glyphicon glyphicon-user"></span>
-                    </a>
-                </p>
             </div>
         </div>
     </div>`
 }
 
 function getHabilidadesComponent(habilidades) {
-    // [ "", "" ]
-    var habilidadeHtml = '';
     var listaCores = ["primary", "success", "warning", "danger"];
 
-    habilidades.forEach(function(hab) {
-        habilidadeHtml += `<span style="margin: 1px" class="label label-${listaCores[getRandomInt(3)]}">${hab.nome}</span>`
-    });
-
-    return habilidadeHtml;
+    return habilidades.map(function(h) {
+        var hab = h.nome;
+        return `<span style="margin: 1px" class="label label-${listaCores[getRandomInt(3)]}">${hab}</span>`
+    }).join('');
 }
 
 function getRandomInt(max) {

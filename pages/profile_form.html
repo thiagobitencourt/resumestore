@@ -7,17 +7,17 @@
     <title>Formulário para edição dos dados</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="../assets/css/resumestore.css">
-    <link rel="stylesheet" href="../assets/css/meu-estilo.css">
-    <link rel="stylesheet" href="../assets/css/aside-menu.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <link rel="stylesheet" href="../assets/css/aside-menu.css">
 </head>
 <body style="margin: 0 10%">
 
     <header>
         <h3>Cadastrar um novo profissional</h3>
     </header>
+
+    <aside-menu></aside-menu>
 
     <main>
         <form id="meu-formulario" onsubmit="cadastrarProfissional(event)">
@@ -45,8 +45,19 @@
         </form>
     </main>
 
-    <script src="../src/js/profissional_dao.js"></script>
+    <script src="../src/js/resume_dao.js"></script>
     <script src="../src/js/formulario.js"></script>
+    <script src="../src/js/components/aside-menu.js"></script>
+
+    <script>
+        asideMenu.renderMenu([
+            {
+                title: 'Pesquisar',
+                url: '/',
+                icon: 'fas fa-search'
+            }
+        ]);
+    </script>
 
 </body>
 </html>

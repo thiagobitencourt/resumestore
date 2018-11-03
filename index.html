@@ -2,72 +2,54 @@
     <head>
         <title>The Resume Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="./assets/css/panel.css"> -->
-        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/css/resumestore.css">
-        <link rel="stylesheet" href="./assets/css/meu-estilo.css">
-        <link rel="stylesheet" href="./assets/css/aside-menu.css">
-
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+        <link rel="stylesheet" href="./assets/css/resumestore.css">
+        <link rel="stylesheet" href="./assets/css/aside-menu.css">
     </head>
     <body>
-
         <section class="container-fluid">
-            <header class="search panel">
-                <img class="logo" src="./assets/image/store.png" alt="Resume Store logo">
-                <section>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Pesquisar...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-filter" title="Filtros" type="button" onclick="filterClicked()">
-                                    <span><i class="fas fa-sliders-h"></i></span>
-                                </button>
-                            </span>
-                        </div>
+            <header class="search resume-panel">
+                <a href="#">
+                    <img class="logo" src="./assets/image/theresumestore.jpg" alt="Resume Store logo">
+                </a>
+                 
+                <section class="input-group">
+                    <input type="text" class="form-control" placeholder="Pesquisar...">
+                    <span class="input-group-addon btn-filter" onclick="filterClicked()">
+                        <i class="fas fa-sliders-h"></i>
+                    </span>
+                </section>
 
-                        <div id="advanced-filter" class="advanced-filter hidden">
-                            <h3>Eu sou o componente de filtro avançado!</h3>
-                        </div>
-                    </form>
+                <section>
+                    <div id="advanced-filter" class="advanced-filter hidden">
+                        <h3>Eu sou o componente de filtro avançado!</h3>
+                    </div>
                 </section>
             </header>
 
-            <aside>
-                <nav class="aside-menu">
-                    <ul>
-                        <li title="Novo">
-                            <a href="./pages/profile_form.html"><i class="fas fa-user-plus"></i></a>
-                        </li>
-                        <li title="Curriculo">
-                            <a href=""><i class="far fa-address-card"></i></a>
-                        </li>
-                        <li title="Favoritos">
-                            <a href=""><i class="far fa-star"></i></a>
-                        </li>
-                        <li title="Configurações">
-                            <a href=""><i class="fas fa-cogs"></i></a>
-                        </li>
-                        <li title="Sair">
-                            <a href=""><i class="fas fa-sign-out-alt"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
+            <aside-menu></aside-menu>
     
-            <main class="panel">
-                <div id="search-result" class="row">
-                    
-                </div>
+            <main class="resume-panel">
+                <div id="search-result" class="row"></div>
             </main>
         </section>
-
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <script src="./src/js/profissional_dao.js"></script>
+        <script src="./src/js/components/aside-menu.js"></script>
+        <script src="./src/js/resume_dao.js"></script>
         <script src="./src/js/resumestore.js"></script>
         <script src="./src/js/search.js"></script>
+
+        <script>
+            asideMenu.renderMenu([
+                { title: 'Novo', url: './pages/profile_form.html', icon: 'fas fa-user-plus' }
+                // ,{ title: 'Curriculo', url: '', icon: 'far fa-address-card' }
+                // ,{ title: 'Favoritos', url: '', icon: 'far fa-star' }
+                // ,{ title: 'Configurações', url: '', icon: 'fas fa-cogs' }
+            ]);
+        </script>
     </body>
 </html>

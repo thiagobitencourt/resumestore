@@ -11,5 +11,5 @@ function cadastrarProfissional(event) {
         habilidades: habilidades.map(function(h) { return { nome: h }})
     }
 
-    addProfissional(profissional);
+    Resume.add(profissional);
 }

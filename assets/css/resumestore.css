@@ -1,32 +1,35 @@
-/* 
-    seletor {
-        propriedade: valor;
-    }
-*/
-
 body {
     margin: 0 10%;
 }
 
-.panel {
+.resume-panel {
     text-align: center;
 }
 
-header.search {
-    height: 200px;
-    padding: 0 0 30px 0;
+.logo {
+    max-width: 300px;
+    margin: 30px;
 }
 
-.search img.logo {
-    height: 100px;
-    width: 300px;
-    margin: 20px;
+.thumbnail img {
+    max-width: 218px;
+    max-height: 218px;
+}
+
+.resume-panel #search-result {
+    margin-top: 10px;
+}
+
+.resume-panel .loading {
+    font-size: 35px;
+    margin-top: 20px;
+    color: #378eff;
+}
+
+.resume-panel .progress {
+    height: 5px;
 }
 
 .btn-filter {
-    height: 34px;
-}
-
-.hidden {
-    display: none;
+    cursor: pointer;
 }
