@@ -1,0 +1,34 @@
+.user-image {
+    height: 218px;
+    width: 218px;
+    float: left;
+    background-image: url('../image/defaultuser.png');
+    background-size: cover;
+    margin-right: 15px;
+}
+
+.user-image:hover {
+    cursor: pointer;
+}
+
+.input-image {
+    background-color: rgba(199, 199, 199, 0.5);
+    text-align: center;
+}
+
+.user-image:hover .input-image {
+    display: block;
+}
+
+.user-image input, .user-image .input-image {
+    display: none;
+}
+
+.skills-block {
+    margin: 0 3px;
+}
+
+.skills-block i {
+    cursor: pointer;
+    margin: 0 1px;
+}

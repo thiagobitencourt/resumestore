@@ -10,38 +10,46 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     
     <link rel="stylesheet" href="../assets/css/aside-menu.css">
+    <link rel="stylesheet" href="../assets/css/formulario.css">
 </head>
 <body style="margin: 0 10%">
-
     <header>
-        <h3>Cadastrar um novo profissional</h3>
+        <h3>Cadastrar um novo currículo</h3>
     </header>
 
     <aside-menu></aside-menu>
 
     <main>
-        <form id="meu-formulario" onsubmit="cadastrarProfissional(event)">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" name="nome" class="form-control" id="name" placeholder="Informe seu nome">
+        <form id="meu-formulario" onsubmit="addResume(event)">
+            <div class="row">
+                <section class="col-md-4 form-group user-image" onclick="changeUserImage(event)">
+                    <span class="input-image">Alterar imagem</span>
+                    <input type="file" name="foto" id="user-input-image">
+                </section>
+
+                <section class="col-md-8">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" name="nome" class="form-control" id="name" placeholder="Informe seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Cargo</label>
+                        <input type="text" name="descricao" class="form-control" id="description" placeholder="Informe o seu cargo">
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Habilidades</label>
+                        <input type="text" name="habilidades" id="tags" class="form-control" placeholder="Informe suas habilidades">
+                        <p id="skills-block" class="skills-block"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aboutme">Sobre mim</label>
+                        <textarea name="sobreMim" rows="5" class="form-control" id="aboutme" placeholder="Escreva um resumo sobre você..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Salvar</button>
+                </section>
             </div>
-            <div class="form-group">
-                <label for="description">Descrição</label>
-                <input type="text" name="descricao" class="form-control" id="description" placeholder="Informe o seu cargo">
-            </div>
-            <div class="form-group">
-                <label for="foto">Foto</label>
-                <input type="file" name="foto" id="foto">
-                <p class="help-block">Faça upload de uma imagem para o seu perfil.</p>
-            </div>
-            <div class="form-group">
-                <label for="tags">Habilidades</label>
-                <input type="text" name="habilidades" id="tags" class="form-control">
-                <span id="helpBlock" class="help-block">
-                    Informe as suas habilidades separadas por "ponto e vírgula (;)"
-                </span>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </main>
 
