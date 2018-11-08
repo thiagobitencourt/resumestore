@@ -1,11 +1,11 @@
 'use strict';
-var defauleMenuItems = [
+var defaultMenuItems = [
     { title: 'Sair', url: '/', icon: 'fas fa-sign-out-alt' }
 ];
 
 var asideMenu = {};
 asideMenu.renderMenu = function (menuItems) {
-    menuItems = (menuItems || []).concat(defauleMenuItems);
+    menuItems = (menuItems || []).concat(defaultMenuItems);
 
     var asideMenu = document.getElementsByTagName('aside-menu')[0] || {};
     asideMenu.innerHTML = `

@@ -10,6 +10,7 @@ function addResume(event) {
     currentResume.nome = formulario.nome.value;
     currentResume.descricao = formulario.descricao.value;
     currentResume.habilidades = currentResume.habilidades.map(function(h) { return { nome: h }});
+    currentResume.sobreMim = formulario.sobreMim.value;
 
     Resume.add(currentResume);
 }

@@ -38,7 +38,11 @@ function getProfileComponent(profissional) {
         <div class="thumbnail">
             <img src="${profissional.foto || defaultUser}" alt="${profissional.nome}">
             <div class="caption">
-                <h3>${profissional.nome}</h3>
+                <h3>
+                    <a href="./pages/profile_details.html?resume=${profissional.id}">
+                        ${profissional.nome}
+                    </a>
+                </h3>
                 <p>${profissional.descricao}</p>
 
                 <div class="progress">
