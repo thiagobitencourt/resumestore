@@ -13,8 +13,18 @@ function addResume(event) {
     currentResume.sobreMim = formulario.sobreMim.value;
 
     Resume.add(currentResume);
+    toastr.success("O novo curriculo foi adicionado!", "Sucesso!");
+    resetForm(formulario);
 }
 
+function resetForm(formulario) {
+    formulario.reset();
+    currentResume = {
+        habilidades: []
+    };
+    renderSkills();
+}
+ 
 function changeUserImage(event) {
     event.stopPropagation();
     document.getElementById('user-input-image').click();
